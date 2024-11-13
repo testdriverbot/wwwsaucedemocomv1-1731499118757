@@ -1,0 +1,24 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the Chrome browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Enter a valid username in the username field.
+    commands:
+      - command: hover-text
+        text: Username
+        description: username input field
+        action: click
+      - command: type
+        text: standard_user
+  - prompt: >-
+      Enter the password "secret  # Use the content of the file from the
+      environment
+    commands:
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: secret_sauce
