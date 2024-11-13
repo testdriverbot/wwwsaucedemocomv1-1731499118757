@@ -1,0 +1,9 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the Chrome browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
