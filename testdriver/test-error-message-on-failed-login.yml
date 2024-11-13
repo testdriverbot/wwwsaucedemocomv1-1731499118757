@@ -1,0 +1,36 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the Chrome browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Enter an invalid username in the username field.
+    commands:
+      - command: hover-text
+        text: Username
+        description: username input field
+        action: click
+      - command: type
+        text: invalid_user
+  - prompt: Enter an incorrect password in the password field.
+    commands:
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: wrong_password
+  - prompt: Click the "LOGIN" button.
+    commands:
+      - command: hover-text
+        text: LOGIN
+        description: login button
+        action: click
+  - prompt: >-
+      Assert that an error message is displayed on the screen.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          Epic sadface: Username and password do not match any user in this
+          service
