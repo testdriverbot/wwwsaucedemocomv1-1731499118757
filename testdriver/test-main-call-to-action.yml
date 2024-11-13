@@ -1,0 +1,24 @@
+version: 4.1.15
+steps:
+  - prompt: Focus the Chrome browser window.
+    commands:
+      - command: hover-text
+        text: Swag Labs
+        description: tab title in Chrome
+        action: click
+  - prompt: Assert that the main "LOGIN" button is visible on the page.
+    commands:
+      - command: assert
+        expect: the main "LOGIN" button is visible on the page
+  - prompt: Click the "LOGIN" button.
+    commands:
+      - command: hover-text
+        text: LOGIN
+        description: login button on the page
+        action: click
+  - prompt: >-
+      Assert that the user is prompted for login details.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the user is prompted for login details with an error message
